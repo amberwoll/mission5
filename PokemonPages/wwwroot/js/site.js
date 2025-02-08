@@ -1,7 +1,9 @@
-﻿$(document).ready(function () {
+﻿// this function takes the input from the calculator and gives a rate. also further validates inputs
+
+$(document).ready(function () {
     $("#btnPrice").click(function (event) {
         event.preventDefault(); // Prevent form submission
-
+        
         let hoursInput = $("#txtHours")[0]; // Get the raw input element
         let hours = parseFloat(hoursInput.value);
         let rate = parseFloat($("#txtRate").val());
