@@ -1,6 +1,23 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Tutoring Calculator";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<script src="js/site.js"></script>
+
+<h2>Hourly Rate Calculator</h2>
+<p>If you would like to learn how to play from a beginner, 
+    learn the best way to start collecting, or get tutored about my current collection 
+    (essentially just looking through my cards together), find my current rates for tutoring below!</p>
+<form>
+    <label>Number of Hours Required: </label>
+    <input type="number" id="txtHours" min="1" required />
+    <br/>
+    <label>My Hourly Rate: </label>
+    <input type="number" id="txtRate" value=".50" readonly />
+    <br/>
+    <button type="button" id="btnPrice">Calculate Price</button>
+    <br/>
+    <label>Total Price: </label>
+    <input type="number" id="txtTotal" readonly/>
+</form>
+

@@ -1,4 +1,23 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    $("#btnPrice").click(function (event) {
+        event.preventDefault(); // Prevent form submission
 
-// Write your JavaScript code.
+        let hoursInput = $("#txtHours")[0]; // Get the raw input element
+        let hours = parseFloat(hoursInput.value);
+        let rate = parseFloat($("#txtRate").val());
+
+        // If the input is invalid, show the browser's built-in validation message
+        if (!hoursInput.checkValidity()) {
+            hoursInput.reportValidity();
+            return;
+        }
+
+        // Validate manually if it's a positive number
+        if (!isNaN(hours) && hours > 0) {
+            let total = hours * rate;
+            $("#txtTotal").val(total.toFixed(2)); // Show result with 2 decimal places
+        } else {
+            $("#txtTotal").val("Invalid input");
+        }
+    });
+});
